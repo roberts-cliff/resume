@@ -52,17 +52,25 @@ pub mod data_structure {
         pub description: String,
         #[serde(default)]
         pub role: Role,
-        pub stack: Vec<String>,
+        pub stack: Vec<Tech>,
 //    contributions: Vec<String>
+    }
+
+    #[derive(Debug, PartialEq, Serialize, Deserialize)]
+    pub struct Tech {
+        pub tech: String
     }
     #[derive(Debug, PartialEq, Serialize, Deserialize)]
     pub struct Job {
+        pub company: String,
         pub tenure: Tenure,
         pub projects: Vec<Project>
     }
     #[derive(Debug, PartialEq, Serialize, Deserialize)]
     pub struct Person {
         pub name: String,
+        pub contact: String,
+        pub skills: Vec<String>,
         pub jobs: Vec<Job>
     }
 }

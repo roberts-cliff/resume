@@ -1,15 +1,29 @@
 name: cliff
+contact: roberts.cliff@gmail.com
+skills:
+  - java 1.5->11
+  - maven
+  - spring (2->5, boot 1->2)
+  - git
+  - python 2 and 3
+  - linux (RHEL/Centos mostly)
+  - REST
+  - kafka
+  - kubernetes
+  - docker
+  - bash
 jobs:
-  - tenure:
+  - company: kramerica
+    tenure:
       start: yesterday
     projects:
       - name: cliffy fun times
-        description: - 'writing some rust code,
+        description: 'writing some rust code,
         to hone some skills and also refresh my resume since i hate document writing.'
-#        period:
-#          start: yesterday
+        period:
+          start: yesterday
         stack:
-          - rust
-          - cargo
-          - linux
-          - IJ idea
+          - tech: rust
+          - tech: cargo
+          - tech: linux
+          - tech: IJ idea
