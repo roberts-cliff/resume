@@ -9,7 +9,6 @@ skills:
   - 'Middleware: Apache, Kafka, Tomcat, Jetty'
   - 'Infrastructure: Kubernetes, AWS, data center'
   - 'Performance tuning: jvm tuning, data structure optimization, parallel programming, message based architectures'
-  - ''
 jobs:
   - company: Nasdaq
     tenure:
@@ -36,14 +35,17 @@ jobs:
           - 'Implemented AWS deployed ETL pipelines, data warehouse, and reporting solutions with AWS Redshift, Aurora, S3, EC2 and Pentaho tooling.'
           - 'Applied a consistent and transparent development cycle, balancing the needs of various stakeholders to deliver projects on time.'
       - name: OATS
-        description: 'Compliance reporting'
+        description: 'Developer, Compliance reporting'
         period:
-          start: '2013'
+          start: '2012'
           end: '2016'
         blurbs:
-          - 'Maintained a legacy compliance system, '
-          - 'Implemented AWS deployed ETL pipelines, data warehouse, and reporting solutions with AWS Redshift, Aurora, S3, EC2 and Pentaho tooling.'
-          - 'Applied a consistent and transparent development cycle, balancing the needs of various stakeholders to deliver projects on time.'
+          - 'Maintained a legacy compliance system, with strict delivery timing SLA.'
+          - 'Applied ~14x throughput improvement through data structure optimization.'
+          - 'Clean room re-implementation of OATS, vastly improved MTBF and overall throughput, deployed for a new client.'
+          - 'Matured deployment pipeline from homegrown rsync based tooling to rpm.'
+          - 'Implemented a database backed webapp for configuration management, fully validating sensitive configurations further reducing MTBF due to configuration oversights.'
+          -
 
   - company: kramerica
     tenure:

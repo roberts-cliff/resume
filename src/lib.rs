@@ -29,25 +29,12 @@ pub mod data_structure {
     }
 
     #[derive(Debug, PartialEq, Serialize, Deserialize)]
-    pub enum Role {
-        DEV,
-        SENIOR_DEV,
-    }
-
-    impl Default for Role {
-        fn default() -> Self {
-            Role::DEV
-        }
-    }
-
-    #[derive(Debug, PartialEq, Serialize, Deserialize)]
     pub struct Project {
         pub name: String,
         #[serde(default)]
         pub period: Tenure,
         pub description: String,
         #[serde(default)]
-        pub role: Role,
         pub blurbs: Vec<String>,
     }
 
