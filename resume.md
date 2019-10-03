@@ -17,7 +17,6 @@
 ---
 #### Relevant Skills
 <ul id="limheight">
-
 <li>java 1.5-&gt;11</li>
 <li>maven</li>
 <li>spring (2-&gt;5, boot 1-&gt;2)</li>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{name}}</title>
+</head>
+
+<style
+        rel="stylesheet" type="text/css">
+</style>
+<body>
+
+<h1 id="name">{{name}}</h1>
+
+<blockquote>
+    <p>{{contact}}</p>
+</blockquote>
+
+<hr/>
+
+<h4 id="relevantskills">Relevant Skills</h4>
+
+<ul>{{#each skills}}
+    <li>{{this}}</li>
+    {{/each}}
+</ul>
+<h2 id="eachjobs">{{#each jobs}}</h2>
+<h4 id="company">{{company}}</h4>
+<blockquote>
+    <p>{{tenure.start}} - {{tenure.end}}</p>
+    <p>{{#each projects}}</p>
+    <h4 id="name-1">{{name}}</h4>
+    <blockquote>
+        <p>{{period.start}} - {{period.end}}</p>
+    </blockquote>
+    <p>{{description}}</p>
+    <blockquote>
+        <ul>{{#each blurbs}}
+            <li>{{this}}</li>
+            {{/each}}
+        </ul>
+    </blockquote>
+    {{/each}}
+</blockquote>
+{{/each}}
+</body>
+</html>
