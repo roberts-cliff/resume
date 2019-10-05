@@ -1,0 +1,90 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Person",
+  "type": "object",
+  "properties": {
+    "contact": {
+      "type": "string"
+    },
+    "jobs": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/Job"
+      }
+    },
+    "name": {
+      "type": "string"
+    },
+    "skills": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "required": [
+    "contact",
+    "jobs",
+    "name",
+    "skills"
+  ],
+  "definitions": {
+    "Job": {
+      "type": "object",
+      "properties": {
+        "company": {
+          "type": "string"
+        },
+        "roles": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Project"
+          }
+        },
+        "tenure": {
+          "$ref": "#/definitions/Tenure"
+        }
+      },
+      "required": [
+        "company",
+        "roles",
+        "tenure"
+      ]
+    },
+    "Project": {
+      "type": "object",
+      "properties": {
+        "blurbs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "description": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "period": {
+          "$ref": "#/definitions/Tenure"
+        }
+      },
+      "required": [
+        "description",
+        "name"
+      ]
+    },
+    "Tenure": {
+      "type": "object",
+      "properties": {
+        "end": {
+          "type": "string"
+        },
+        "start": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}
