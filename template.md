@@ -11,7 +11,7 @@
 #### {{company}}
 > {{tenure.start}} - {{tenure.end}}
 
-{{#each projects}}
+{{#each roles}}
 #### {{name}}
 {{description}}
 >{{period.start}} - {{period.end}}

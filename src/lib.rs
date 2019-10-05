@@ -42,7 +42,7 @@ pub mod data_structure {
     pub struct Job {
         pub company: String,
         pub tenure: Tenure,
-        pub projects: Vec<Project>,
+        pub roles: Vec<Project>,
     }
 
     #[derive(Debug, PartialEq, Serialize, Deserialize)]

@@ -46,7 +46,8 @@ Developer, Compliance reporting
 >> - Applied ~14x throughput improvement through data structure optimization.
 >> - Clean room re-implementation of OATS, vastly improved MTBF and overall throughput, deployed for a new client.
 >> - Matured deployment pipeline from homegrown rsync based tooling to rpm.
->> - Implemented a database backed webapp for configuration management, fully validating sensitive configurations further reducing MTBF
+>> - Implemented a database backed webapp for configuration management, fully validating sensitive configurations further reducing MTBF due to configuration oversights.
+>> - ~
 
 
 ---

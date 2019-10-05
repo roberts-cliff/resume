@@ -20,25 +20,19 @@ use resume::data_structure::*;
 
 fn main() {
     let person = read_person().unwrap();
-    let template = read_template();
-//    println!("{:?}", template);
+    let template_md = fs::read_to_string("template.md".to_string()).unwrap_or_default();
+    let template_html = fs::read_to_string("template.html".to_string()).unwrap_or_default();
     let mut handlebars = Handlebars::new();
-    let contents = handlebars.render_template(template.as_str(), &person).unwrap();
-//    println!("{:?}", contents.unwrap());
-    fs::write("resume.html", contents);
+    let md_output = handlebars.render_template(template_md.as_str(), &person).unwrap();
+    let html_output = handlebars.render_template(template_html.as_str(), &person).unwrap();
+    fs::write("resume.md", md_output);
+    fs::write("resume.html", html_output);
 }
-
-fn read_template() -> String {
-    fs::read_to_string("template.html").unwrap_or_default()
-}
-
-//#[test]
 
 fn read_person() -> Result<Person> {
     let f = File::open("resume.yml").unwrap();
     let reader = BufReader::new(f);
     let p: Result<Person> =
         serde_yaml::from_reader(reader);
-//    println!("{:?}", p);
     p
 }
