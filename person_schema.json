@@ -54,7 +54,7 @@
     "Project": {
       "type": "object",
       "properties": {
-        "blurbs": {
+        "bullets": {
           "type": "array",
           "items": {
             "type": "string"

@@ -38,7 +38,7 @@ pub mod data_structure {
         pub period: Tenure,
         pub description: String,
         #[serde(default)]
-        pub blurbs: Vec<String>,
+        pub bullets: Vec<String>,
     }
 
     #[derive(Debug, PartialEq, Serialize, Deserialize, JsonSchema)]
@@ -52,6 +52,7 @@ pub mod data_structure {
     pub struct Person {
         pub name: String,
         pub contact: String,
+        pub purpose: String,
         pub skills: Vec<String>,
         pub jobs: Vec<Job>,
     }

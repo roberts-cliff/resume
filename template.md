@@ -15,7 +15,7 @@
 #### {{name}}
 {{description}}
 >{{period.start}} - {{period.end}}
->Tools and Technologies: {{#each blurbs}}
+>Tools and Technologies: {{#each bullets}}
 >> - {{this}}{{/each}}
 {{/each}}
 {{/each}}

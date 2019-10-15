@@ -20,7 +20,7 @@
 
 
 #### RiskXposure
-Senior Developer, near real time market risk exposure accumulation engine, actively maintaining while evolving the system.
+Senior Developer, near real time market risk exposure accumulation engine
 >2016 - now
 >Tools and Technologies: 
 >> - Optimized the engine to be able to achieve ~10x throughput through data partitioning and parallel computation.
@@ -44,22 +44,9 @@ Developer, Compliance reporting
 >Tools and Technologies: 
 >> - Maintained a legacy compliance system, with strict delivery timing SLA.
 >> - Applied ~14x throughput improvement through data structure optimization.
->> - Clean room re-implementation of OATS, vastly improved MTBF and overall throughput, deployed for a new client.
+>> - Clean room re-implementation of OATS, vastly improved mean time between failure and overall throughput.
 >> - Matured deployment pipeline from homegrown rsync based tooling to rpm.
->> - Implemented a database backed webapp for configuration management, fully validating sensitive configurations further reducing MTBF due to configuration oversights.
+>> - Implemented a database backed webapp for configuration management, fully validating sensitive configurations further reducing mean time between failure due to configuration oversights.
 >> - ~
-
-
----
-#### kramerica
-> yesterday - now
-
-
-#### cliffy fun times
-writing some rust code, to hone some skills and also refresh my resume since i hate document writing.
->yesterday - now
->Tools and Technologies: 
->> - was rendering into markdown, now goofing with html5, still just trying to fill this thing out
->> - i should update this more regularly, gawd
 
 
