@@ -1,5 +1,12 @@
-name: cliff
-contact: roberts.cliff@gmail.com
+name: Cliff Roberts
+contact: roberts.cliff@gmail.com | www.linkedin.com/in/cliffroberts81 | github.com/roberts-cliff
+purpose: |
+  Software Engineer with experience working with high throughput and low latency applications,
+  focued on improving scalability and resiliency of systems through application of microservices and event driven
+  architectural patterns.
+education:
+  - B.S. Computer Science, Metro State College of Denver 2012
+
 skills:
   - 'Languages: Java(1.5->11), Python(2.4->3), bash, SQL(MySql, PgSQL), JavaScript'
   - 'Tools:  Maven, Git, Docker, Intellij, Eclipse, vim, Subversion, MS Office, plantUML'
@@ -8,7 +15,7 @@ skills:
   - 'SDLC: Scrum, Kanban'
   - 'Middleware: Apache, Kafka, Tomcat, Jetty'
   - 'Infrastructure: Kubernetes, AWS, data center'
-  - 'Performance tuning: jvm tuning, data structure optimization, parallel programming, message based architectures'
+  - 'Performance tuning: JVM tuning, data structure optimization, parallel programming, message based architectures'
 jobs:
   - company: Nasdaq
     tenure:
@@ -19,11 +26,11 @@ jobs:
         period:
           start: '2016'
         bullets:
-          - 'Optimized the engine to be able to achieve ~10x throughput through data partitioning and parallel computation.'
+          - 'Optimized the risk engine to be able to achieve ~10x throughput through data partitioning and parallel computation.'
           - 'Implemented dynamic resource provisioning using kubernetes and built out a REST backend to control those interactions via a React/js front end.'
-          - 'Improved resiliency by migrating the core messaging system from point to point proprietary technology to apache kafka.'
+          - 'Improved resiliency by migrating the core messaging system from point to point proprietary technology to Kafka.'
           - 'Decomposed parts of a SOA system into a micro-services based system, improving both granularity of failure and time to market for new services.'
-          - 'Operationally hardened by adding REST based technologies to improve real time telemetry gathering and observability of active services.'
+          - 'Operationally hardened the data ingest pipeline by adding REST based technologies to improve real time telemetry gathering and observability of active services.'
           - 'Implemented and maintained support for a wide variety of wire protocols FIX, JSON, Avro, SOUP/tcp, various proprietary binary formats.'
       - name: BI
         description: 'Manager, AWS based BI'

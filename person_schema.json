@@ -6,6 +6,12 @@
     "contact": {
       "type": "string"
     },
+    "education": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
     "jobs": {
       "type": "array",
       "items": {
@@ -13,6 +19,9 @@
       }
     },
     "name": {
+      "type": "string"
+    },
+    "purpose": {
       "type": "string"
     },
     "skills": {
@@ -24,8 +33,10 @@
   },
   "required": [
     "contact",
+    "education",
     "jobs",
     "name",
+    "purpose",
     "skills"
   ],
   "definitions": {

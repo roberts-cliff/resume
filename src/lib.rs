@@ -1,12 +1,13 @@
 #[macro_use]
+extern crate schemars_derive;
+#[macro_use]
 extern crate serde;
 #[macro_use]
 extern crate serde_derive;
-#[macro_use]
-extern crate schemars_derive;
 extern crate serde_yaml;
 
 use schemars_derive::JsonSchema;
+
 pub mod data_structure {
     // serde defaults are kinda strange to deal with, these functions work but are uglyish to me
     fn default_tenure_start() -> String {
@@ -14,7 +15,7 @@ pub mod data_structure {
     }
 
     fn default_tenure_end() -> String {
-        "now".to_string()
+        "present".to_string()
     }
 
     #[derive(Debug, PartialEq, Serialize, Deserialize, JsonSchema)]
@@ -55,6 +56,7 @@ pub mod data_structure {
         pub purpose: String,
         pub skills: Vec<String>,
         pub jobs: Vec<Job>,
+        pub education: Vec<String>
     }
 }
 
