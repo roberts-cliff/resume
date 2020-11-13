@@ -1,12 +1,9 @@
 #[macro_use]
 extern crate schemars_derive;
-#[macro_use]
 extern crate serde;
 #[macro_use]
 extern crate serde_derive;
 extern crate serde_yaml;
-
-use schemars_derive::JsonSchema;
 
 pub mod data_structure {
     // serde defaults are kinda strange to deal with, these functions work but are uglyish to me
