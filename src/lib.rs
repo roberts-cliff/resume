@@ -1,11 +1,12 @@
 #[macro_use]
 extern crate schemars_derive;
 extern crate serde;
-#[macro_use]
-extern crate serde_derive;
 extern crate serde_yaml;
 
 pub mod data_structure {
+    use serde::{Serialize, Deserialize};
+    use schemars::JsonSchema;
+
     // serde defaults are kinda strange to deal with, these functions work but are uglyish to me
     fn default_tenure_start() -> String {
         "".to_string()

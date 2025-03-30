@@ -2,13 +2,13 @@
 name = "resume"
 version = "0.1.0"
 authors = ["cliff roberts <roberts.cliff@gmail.com>"]
+edition = "2021"
 
 [dependencies]
-handlebars = "2.0.2"
-serde = "1.0"
-serde_derive = "1.0"
-serde_yaml = "0.7"
+handlebars = "3.5.5"
+serde = { version = "1.0", features = ["derive"] }
+serde_yaml = "0.9"
 argparse = "0.2.1"
-schemars_derive = "0.1.7"
 schemars = "0.1.7"
-serde_json = "1.0.41"
+schemars_derive = "0.1.7"
+serde_json = "1.0"
