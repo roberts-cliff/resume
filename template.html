@@ -1,43 +1,400 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <title>{{name}}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{name}} - Resume</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.3;
+            color: #333;
+            background: #fff;
+            max-width: 210mm;
+            margin: 0 auto;
+            padding: 10px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 8px;
+            border-bottom: 2px solid #2c3e50;
+            padding-bottom: 6px;
+        }
+
+        .name {
+            font-size: 1.6em;
+            font-weight: 700;
+            color: #2c3e50;
+            margin-bottom: 3px;
+        }
+
+        .contact {
+            font-size: 0.8em;
+            color: #7f8c8d;
+            margin-bottom: 5px;
+        }
+
+        .purpose {
+            font-size: 0.9em;
+            color: #34495e;
+            font-style: italic;
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .section {
+            margin-bottom: 8px;
+        }
+
+        .section-title {
+            font-size: 1em;
+            font-weight: 600;
+            color: #2c3e50;
+            border-bottom: 1px solid #3498db;
+            padding-bottom: 1px;
+            margin-bottom: 6px;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 1px;
+            margin-bottom: 0;
+        }
+
+        .skill-category {
+            background: #f8f9fa;
+            padding: 2px 4px;
+            border-radius: 2px;
+            border-left: 2px solid #3498db;
+            font-size: 0.75em;
+            line-height: 1.2;
+        }
+
+        .skill-category strong {
+            color: #2c3e50;
+            display: block;
+            margin-bottom: 1px;
+            font-size: 0.85em;
+        }
+
+        .job {
+            margin-bottom: 6px;
+            padding: 6px;
+            background: #f8f9fa;
+            border-radius: 4px;
+            border-left: 2px solid #3498db;
+        }
+
+        .job-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 6px;
+        }
+
+        .company {
+            font-size: 0.9em;
+            font-weight: 600;
+            color: #2c3e50;
+        }
+
+        .tenure {
+            color: #7f8c8d;
+            font-size: 0.7em;
+        }
+
+        .role {
+            margin-bottom: 4px;
+        }
+
+        .role-title {
+            font-size: 0.85em;
+            font-weight: 600;
+            color: #34495e;
+            margin-bottom: 1px;
+        }
+
+        .role-description {
+            color: #7f8c8d;
+            font-style: italic;
+            margin-bottom: 3px;
+            font-size: 0.75em;
+        }
+
+        .role-period {
+            color: #95a5a6;
+            font-size: 0.65em;
+            margin-bottom: 3px;
+        }
+
+        .bullets {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .bullets li {
+            position: relative;
+            padding-left: 10px;
+            margin-bottom: 2px;
+            line-height: 1.2;
+            font-size: 0.75em;
+        }
+
+        .bullets li:before {
+            content: "•";
+            color: #3498db;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+
+        .education {
+            background: #f8f9fa;
+            padding: 6px;
+            border-radius: 4px;
+            border-left: 2px solid #3498db;
+        }
+
+        .education-item {
+            font-size: 0.8em;
+            color: #2c3e50;
+            margin-bottom: 2px;
+        }
+
+        .content-wrapper {
+            page-break-inside: avoid !important;
+            break-inside: avoid !important;
+            display: block;
+        }
+
+        .skills-experience-container {
+            page-break-inside: avoid !important;
+            break-inside: avoid !important;
+            display: block;
+        }
+
+        @media print {
+            body {
+                padding: 0;
+                margin: 0;
+            }
+
+            /* Force header to stay with content */
+            .header {
+                page-break-after: avoid !important;
+                break-after: avoid !important;
+            }
+
+            /* Force skills and experience to stay together */
+            .content-wrapper {
+                page-break-inside: avoid !important;
+                break-inside: avoid !important;
+                orphans: 1;
+                widows: 1;
+            }
+
+            .skills-experience-container {
+                page-break-inside: avoid !important;
+                break-inside: avoid !important;
+                orphans: 1;
+                widows: 1;
+            }
+
+            .section {
+                page-break-inside: avoid !important;
+                break-inside: avoid !important;
+            }
+
+            .job {
+                page-break-inside: avoid !important;
+                break-inside: avoid !important;
+            }
+
+            .role {
+                page-break-inside: avoid !important;
+                break-inside: avoid !important;
+            }
+
+            .skills-grid {
+                page-break-inside: avoid !important;
+                break-inside: avoid !important;
+            }
+
+            .education {
+                page-break-inside: avoid !important;
+                break-inside: avoid !important;
+            }
+
+            .header {
+                page-break-inside: avoid !important;
+                break-inside: avoid !important;
+            }
+
+            .purpose {
+                page-break-inside: avoid !important;
+                break-inside: avoid !important;
+            }
+
+            .job-header {
+                page-break-inside: avoid !important;
+                break-inside: avoid !important;
+            }
+
+            .role-title {
+                page-break-inside: avoid !important;
+                break-inside: avoid !important;
+            }
+
+            .role-description {
+                page-break-inside: avoid !important;
+                break-inside: avoid !important;
+            }
+
+            .role-period {
+                page-break-inside: avoid !important;
+                break-inside: avoid !important;
+            }
+
+            .skill-category {
+                page-break-inside: avoid !important;
+                break-inside: avoid !important;
+            }
+
+            .education-item {
+                page-break-inside: avoid !important;
+                break-inside: avoid !important;
+            }
+
+            /* Aggressively prevent page break after skills section */
+            .section:first-of-type {
+                page-break-after: avoid !important;
+                break-after: avoid !important;
+            }
+
+            /* Force experience section to stay with skills */
+            .section:nth-of-type(2) {
+                page-break-before: avoid !important;
+                break-before: avoid !important;
+            }
+
+            /* Prevent any breaks within the content wrapper */
+            .content-wrapper .section {
+                page-break-before: avoid !important;
+                page-break-after: avoid !important;
+                break-before: avoid !important;
+                break-after: avoid !important;
+            }
+
+            /* Prevent breaks between skills and experience */
+            .skills-experience-container .section {
+                page-break-before: avoid !important;
+                page-break-after: avoid !important;
+                break-before: avoid !important;
+                break-after: avoid !important;
+            }
+
+            /* Allow breaks between jobs but not within them */
+            .job+.job {
+                page-break-before: auto;
+                break-before: auto;
+            }
+
+            /* Prevent orphaned headers */
+            .section-title {
+                page-break-after: avoid !important;
+                break-after: avoid !important;
+            }
+
+            /* Keep bullets with their parent */
+            .bullets {
+                page-break-inside: avoid !important;
+                break-inside: avoid !important;
+            }
+
+            .bullets li {
+                page-break-inside: avoid !important;
+                break-inside: avoid !important;
+            }
+
+            /* Force minimum height to prevent splitting */
+            .content-wrapper {
+                min-height: 0;
+                max-height: none;
+            }
+
+            /* Force education to start on new page if needed */
+            .section:last-child {
+                page-break-before: auto;
+                break-before: auto;
+            }
+        }
+    </style>
 </head>
+
 <body>
+    <div class="header">
+        <h1 class="name">{{name}}</h1>
+        <div class="contact">{{contact}}</div>
+        <div class="purpose">{{purpose}}</div>
+    </div>
 
-<h1 id="name">{{name}}</h1>
+    <div class="content-wrapper">
+        <div class="skills-experience-container">
+            <div class="section">
+                <h2 class="section-title">Skills</h2>
+                <div class="skills-grid">
+                    {{#each skills}}
+                    <div class="skill-category">
+                        <strong>{{this}}</strong>
+                    </div>
+                    {{/each}}
+                </div>
+            </div>
 
-<blockquote>
-    <p>{{contact}}</p>
-</blockquote>
+            <div class="section">
+                <h2 class="section-title">Experience</h2>
+                {{#each jobs}}
+                <div class="job">
+                    <div class="job-header">
+                        <div class="company">{{company}}</div>
+                        <div class="tenure">{{tenure.start}} - {{tenure.end}}</div>
+                    </div>
+                    {{#each roles}}
+                    <div class="role">
+                        <div class="role-title">{{name}}</div>
+                        <div class="role-description">{{description}}</div>
+                        <div class="role-period">{{period.start}} - {{period.end}}</div>
+                        <ul class="bullets">
+                            {{#each bullets}}
+                            <li>{{this}}</li>
+                            {{/each}}
+                        </ul>
+                    </div>
+                    {{/each}}
+                </div>
+                {{/each}}
+            </div>
+        </div>
+    </div>
 
-<hr/>
-
-<h4 id="relevantskills">Relevant Skills</h4>
-
-<ul>{{#each skills}}
-    <li>{{this}}</li>
-    {{/each}}
-</ul>
-<h2 id="eachjobs">{{#each jobs}}</h2>
-<h4 id="company">{{company}}</h4>
-<blockquote>
-    <p>{{tenure.start}} - {{tenure.end}}</p>
-    <p>{{#each roles}}</p>
-    <h4 id="name-1">{{name}}</h4>
-    <blockquote>
-        <p>{{period.start}} - {{period.end}}</p>
-    </blockquote>
-    <p>{{description}}</p>
-    <blockquote>
-        <ul>{{#each bullets}}
-            <li>{{this}}</li>
+    <div class="section">
+        <h2 class="section-title">Education</h2>
+        <div class="education">
+            {{#each education}}
+            <div class="education-item">{{this}}</div>
             {{/each}}
-        </ul>
-    </blockquote>
-    {{/each}}
-</blockquote>
-{{/each}}
+        </div>
+    </div>
 </body>
+
 </html>

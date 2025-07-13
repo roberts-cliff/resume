@@ -1,5 +1,3 @@
-#[macro_use]
-extern crate schemars_derive;
 extern crate serde;
 extern crate serde_yaml;
 

@@ -1,15 +1,17 @@
 # Resume Generator
 
-A Rust-based resume generator that creates professional resumes from YAML input. This tool allows you to maintain your resume in a structured YAML format and generate both Markdown and HTML versions.
+A Rust-based resume generator that creates professional resumes from YAML input. This tool allows you to maintain your resume in a structured YAML format and generate Markdown, HTML, and PDF versions with optimal page layout control.
 
 ## Features
 
-- YAML-based resume definition
-- Schema validation with JSON Schema
-- Multiple output formats (Markdown and HTML)
-- Customizable templates
-- Command-line interface for easy use
+- YAML-based resume definition with schema validation
+- Multiple output formats (Markdown, HTML, and PDF)
+- Professional HTML template with modern, print-optimized styling
+- Intelligent page break control for PDF generation
+- Compact, two-page layout design
+- Command-line interface with flexible options
 - IDE support with autocomplete (IntelliJ, Eclipse)
+- Headless Chrome-based PDF generation for consistent output
 
 ## Prerequisites
 
@@ -43,6 +45,11 @@ Generate resume from default `resume.yml`:
 cargo run
 ```
 
+This generates:
+- `resume.md` - Markdown version
+- `resume.html` - HTML version
+- `resume.pdf` - PDF version (with optimized page layout)
+
 ### Command Line Options
 
 - `-i, --input`: Specify input YAML file (default: resume.yml)
@@ -51,24 +58,26 @@ cargo run
 
 Example:
 ```bash
+# Generate with custom options
 cargo run -- -i my_resume.yml -o output -p my_resume
 ```
 
-### IDE Support
+### PDF Generation
 
-The project includes a JSON Schema for the YAML file (`person_schema.json`), enabling autocomplete in supported IDEs:
-
-- **IntelliJ**: Enable YAML schema support and point to `person_schema.json`
-- **Eclipse**: Install YAML editor plugin and configure schema
+The PDF output is automatically generated and features:
+- Optimized two-page layout
+- Intelligent page break control
+- Professional typography and spacing
+- Print-ready formatting
 
 ## Project Structure
 
 - `resume.yml`: Main resume content in YAML format
 - `template.md`: Markdown template
-- `template.html`: HTML template
+- `template.html`: HTML template with modern, print-optimized styling
 - `person_schema.json`: JSON Schema for YAML validation
 - `src/`: Source code
-  - `main.rs`: Main application entry point
+  - `main.rs`: Main application entry point with CLI handling
   - `lib.rs`: Library code and data structures
 
 ## Customization
@@ -77,16 +86,31 @@ The project includes a JSON Schema for the YAML file (`person_schema.json`), ena
 
 You can modify the output format by editing:
 - `template.md` for Markdown output
-- `template.html` for HTML output
+- `template.html` for HTML and PDF output (includes modern CSS styling with print optimization)
 
 ### YAML Schema
 
 The `person_schema.json` defines the structure for your resume YAML. Key sections include:
-- Personal information
+- Personal information (name, contact, purpose)
+- Skills (categorized technical skills)
+- Work experience (companies, roles, achievements)
 - Education
-- Work experience
-- Skills
-- Projects and achievements
+
+### Page Layout Control
+
+The HTML template includes sophisticated CSS for PDF generation:
+- Automatic page break control
+- Skills and experience sections kept together
+- Compact, professional formatting
+- Optimized for two-page layout
+
+## IDE Support
+
+The project includes a JSON Schema for the YAML file (`person_schema.json`), enabling autocomplete in supported IDEs:
+
+- **IntelliJ**: Enable YAML schema support and point to `person_schema.json`
+- **Eclipse**: Install YAML editor plugin and configure schema
+- **VS Code**: Install YAML extension and configure schema
 
 ## Contributing
 

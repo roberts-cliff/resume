@@ -31,7 +31,7 @@ and best practices.
 >>> - Mentor team members in SRE practices and cloud technologies, fostering a culture of continuous learning and improvement
 
 
->Senior SRE/DevOps Engineer - Cloud Infrastructure Platform 2020-02-03 - present
+>Senior SRE/DevOps Engineer - Cloud Infrastructure Platform 2020-02-03 - 2022-02
 >>> - Led the zero-downtime migration of Kafka and Redis from pet servers to Kubernetes (EKS), improving reliability and reducing operational overhead
 >>> - Migrated CI/CD pipelines from CircleCI to GitHub Actions, streamlining the development workflow and reducing build times
 >>> - Created a comprehensive Spring Boot service template with standardized build and deployment tooling, reducing new service launch time by 70%

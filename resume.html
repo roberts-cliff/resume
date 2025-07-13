@@ -1,157 +1,528 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <title>Cliff Roberts</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cliff Roberts - Resume</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.3;
+            color: #333;
+            background: #fff;
+            max-width: 210mm;
+            margin: 0 auto;
+            padding: 10px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 8px;
+            border-bottom: 2px solid #2c3e50;
+            padding-bottom: 6px;
+        }
+
+        .name {
+            font-size: 1.6em;
+            font-weight: 700;
+            color: #2c3e50;
+            margin-bottom: 3px;
+        }
+
+        .contact {
+            font-size: 0.8em;
+            color: #7f8c8d;
+            margin-bottom: 5px;
+        }
+
+        .purpose {
+            font-size: 0.9em;
+            color: #34495e;
+            font-style: italic;
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .section {
+            margin-bottom: 8px;
+        }
+
+        .section-title {
+            font-size: 1em;
+            font-weight: 600;
+            color: #2c3e50;
+            border-bottom: 1px solid #3498db;
+            padding-bottom: 1px;
+            margin-bottom: 6px;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 1px;
+            margin-bottom: 0;
+        }
+
+        .skill-category {
+            background: #f8f9fa;
+            padding: 2px 4px;
+            border-radius: 2px;
+            border-left: 2px solid #3498db;
+            font-size: 0.75em;
+            line-height: 1.2;
+        }
+
+        .skill-category strong {
+            color: #2c3e50;
+            display: block;
+            margin-bottom: 1px;
+            font-size: 0.85em;
+        }
+
+        .job {
+            margin-bottom: 6px;
+            padding: 6px;
+            background: #f8f9fa;
+            border-radius: 4px;
+            border-left: 2px solid #3498db;
+        }
+
+        .job-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 6px;
+        }
+
+        .company {
+            font-size: 0.9em;
+            font-weight: 600;
+            color: #2c3e50;
+        }
+
+        .tenure {
+            color: #7f8c8d;
+            font-size: 0.7em;
+        }
+
+        .role {
+            margin-bottom: 4px;
+        }
+
+        .role-title {
+            font-size: 0.85em;
+            font-weight: 600;
+            color: #34495e;
+            margin-bottom: 1px;
+        }
+
+        .role-description {
+            color: #7f8c8d;
+            font-style: italic;
+            margin-bottom: 3px;
+            font-size: 0.75em;
+        }
+
+        .role-period {
+            color: #95a5a6;
+            font-size: 0.65em;
+            margin-bottom: 3px;
+        }
+
+        .bullets {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .bullets li {
+            position: relative;
+            padding-left: 10px;
+            margin-bottom: 2px;
+            line-height: 1.2;
+            font-size: 0.75em;
+        }
+
+        .bullets li:before {
+            content: "•";
+            color: #3498db;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+
+        .education {
+            background: #f8f9fa;
+            padding: 6px;
+            border-radius: 4px;
+            border-left: 2px solid #3498db;
+        }
+
+        .education-item {
+            font-size: 0.8em;
+            color: #2c3e50;
+            margin-bottom: 2px;
+        }
+
+        .content-wrapper {
+            page-break-inside: avoid !important;
+            break-inside: avoid !important;
+            display: block;
+        }
+
+        .skills-experience-container {
+            page-break-inside: avoid !important;
+            break-inside: avoid !important;
+            display: block;
+        }
+
+        @media print {
+            body {
+                padding: 0;
+                margin: 0;
+            }
+
+            /* Force header to stay with content */
+            .header {
+                page-break-after: avoid !important;
+                break-after: avoid !important;
+            }
+
+            /* Force skills and experience to stay together */
+            .content-wrapper {
+                page-break-inside: avoid !important;
+                break-inside: avoid !important;
+                orphans: 1;
+                widows: 1;
+            }
+
+            .skills-experience-container {
+                page-break-inside: avoid !important;
+                break-inside: avoid !important;
+                orphans: 1;
+                widows: 1;
+            }
+
+            .section {
+                page-break-inside: avoid !important;
+                break-inside: avoid !important;
+            }
+
+            .job {
+                page-break-inside: avoid !important;
+                break-inside: avoid !important;
+            }
+
+            .role {
+                page-break-inside: avoid !important;
+                break-inside: avoid !important;
+            }
+
+            .skills-grid {
+                page-break-inside: avoid !important;
+                break-inside: avoid !important;
+            }
+
+            .education {
+                page-break-inside: avoid !important;
+                break-inside: avoid !important;
+            }
+
+            .header {
+                page-break-inside: avoid !important;
+                break-inside: avoid !important;
+            }
+
+            .purpose {
+                page-break-inside: avoid !important;
+                break-inside: avoid !important;
+            }
+
+            .job-header {
+                page-break-inside: avoid !important;
+                break-inside: avoid !important;
+            }
+
+            .role-title {
+                page-break-inside: avoid !important;
+                break-inside: avoid !important;
+            }
+
+            .role-description {
+                page-break-inside: avoid !important;
+                break-inside: avoid !important;
+            }
+
+            .role-period {
+                page-break-inside: avoid !important;
+                break-inside: avoid !important;
+            }
+
+            .skill-category {
+                page-break-inside: avoid !important;
+                break-inside: avoid !important;
+            }
+
+            .education-item {
+                page-break-inside: avoid !important;
+                break-inside: avoid !important;
+            }
+
+            /* Aggressively prevent page break after skills section */
+            .section:first-of-type {
+                page-break-after: avoid !important;
+                break-after: avoid !important;
+            }
+
+            /* Force experience section to stay with skills */
+            .section:nth-of-type(2) {
+                page-break-before: avoid !important;
+                break-before: avoid !important;
+            }
+
+            /* Prevent any breaks within the content wrapper */
+            .content-wrapper .section {
+                page-break-before: avoid !important;
+                page-break-after: avoid !important;
+                break-before: avoid !important;
+                break-after: avoid !important;
+            }
+
+            /* Prevent breaks between skills and experience */
+            .skills-experience-container .section {
+                page-break-before: avoid !important;
+                page-break-after: avoid !important;
+                break-before: avoid !important;
+                break-after: avoid !important;
+            }
+
+            /* Allow breaks between jobs but not within them */
+            .job+.job {
+                page-break-before: auto;
+                break-before: auto;
+            }
+
+            /* Prevent orphaned headers */
+            .section-title {
+                page-break-after: avoid !important;
+                break-after: avoid !important;
+            }
+
+            /* Keep bullets with their parent */
+            .bullets {
+                page-break-inside: avoid !important;
+                break-inside: avoid !important;
+            }
+
+            .bullets li {
+                page-break-inside: avoid !important;
+                break-inside: avoid !important;
+            }
+
+            /* Force minimum height to prevent splitting */
+            .content-wrapper {
+                min-height: 0;
+                max-height: none;
+            }
+
+            /* Force education to start on new page if needed */
+            .section:last-child {
+                page-break-before: auto;
+                break-before: auto;
+            }
+        }
+    </style>
 </head>
+
 <body>
+    <div class="header">
+        <h1 class="name">Cliff Roberts</h1>
+        <div class="contact">roberts.cliff@gmail.com | www.linkedin.com/in/cliffroberts81 | github.com/roberts-cliff</div>
+        <div class="purpose">Senior Software Engineer specializing in high-performance, distributed systems with expertise in microservices architecture 
+and event-driven design. Proven track record of optimizing system performance, implementing scalable solutions, and 
+leading technical teams in delivering mission-critical applications. Demonstrated adaptability in rapidly learning and 
+implementing new technologies across different cloud platforms and programming languages, from traditional Java/Python 
+to modern Go/Rust, and from AWS to Azure infrastructure. Passionate mentor who guides team members in technical growth 
+and best practices.
+</div>
+    </div>
 
-<h1 id="name">Cliff Roberts</h1>
+    <div class="content-wrapper">
+        <div class="skills-experience-container">
+            <div class="section">
+                <h2 class="section-title">Skills</h2>
+                <div class="skills-grid">
+                    
+                    <div class="skill-category">
+                        <strong>Programming Languages: Java, Python, JavaScript, SQL (MySQL, PostgreSQL, Snowflake), Bash, Go, Rust</strong>
+                    </div>
+                    
+                    <div class="skill-category">
+                        <strong>Frameworks &amp; Libraries: Spring Framework (2-5), Spring Boot, jQuery, JSP, Presto, dbt</strong>
+                    </div>
+                    
+                    <div class="skill-category">
+                        <strong>Infrastructure &amp; Cloud: Kubernetes (EKS, AKS), AWS (Redshift, Aurora, S3, EC2), Azure (App Service, Application Insights, Cosmos DB, Key Vault), Docker, Apache, Kafka</strong>
+                    </div>
+                    
+                    <div class="skill-category">
+                        <strong>Development Tools: Git, Maven, GitHub Actions, Azure DevOps, Terraform, Helm, Prometheus, Grafana, Datadog</strong>
+                    </div>
+                    
+                    <div class="skill-category">
+                        <strong>Methodologies: Agile (Scrum, Kanban), CI/CD, Microservices Architecture, Event-Driven Design, SRE Practices</strong>
+                    </div>
+                    
+                    <div class="skill-category">
+                        <strong>Performance Optimization: JVM Tuning, Data Structure Optimization, Parallel Programming, Message-Based Architectures</strong>
+                    </div>
+                    
+                </div>
+            </div>
 
-<blockquote>
-    <p>roberts.cliff@gmail.com | www.linkedin.com/in/cliffroberts81 | github.com/roberts-cliff</p>
-</blockquote>
+            <div class="section">
+                <h2 class="section-title">Experience</h2>
+                
+                <div class="job">
+                    <div class="job-header">
+                        <div class="company">UiPath</div>
+                        <div class="tenure">2020-02 - present</div>
+                    </div>
+                    
+                    <div class="role">
+                        <div class="role-title">Site Reliability Engineering</div>
+                        <div class="role-description">Senior Site Reliability Engineer - UiPath</div>
+                        <div class="role-period">2022-02 - present</div>
+                        <ul class="bullets">
+                            
+                            <li>Lead global live site review meetings, including SLO review and postmortem analysis, driving reliability improvements across the platform</li>
+                            
+                            <li>Led a comprehensive monitoring and observability initiative, implementing centralized logging, metrics, and alerting across integrated platforms</li>
+                            
+                            <li>Established standardized SRE practices across both platforms, including incident response procedures and reliability metrics</li>
+                            
+                            <li>Optimized availability monitoring by migrating from expensive Application Insights to dbt-based preaggregation in Snowflake, significantly reducing costs</li>
+                            
+                            <li>Built a new latency monitoring system from the ground up using dbt and Snowflake, providing real-time insights into service performance</li>
+                            
+                            <li>Mentor team members in SRE practices and cloud technologies, fostering a culture of continuous learning and improvement</li>
+                            
+                        </ul>
+                    </div>
+                    
+                    <div class="role">
+                        <div class="role-title">(Cloud Elements) Site Reliability Engineering</div>
+                        <div class="role-description">Senior SRE/DevOps Engineer - Cloud Infrastructure Platform</div>
+                        <div class="role-period">2020-02-03 - 2022-02</div>
+                        <ul class="bullets">
+                            
+                            <li>Led the zero-downtime migration of Kafka and Redis from pet servers to Kubernetes (EKS), improving reliability and reducing operational overhead</li>
+                            
+                            <li>Migrated CI/CD pipelines from CircleCI to GitHub Actions, streamlining the development workflow and reducing build times</li>
+                            
+                            <li>Created a comprehensive Spring Boot service template with standardized build and deployment tooling, reducing new service launch time by 70%</li>
+                            
+                            <li>Implemented infrastructure as code using Terraform and AWS CloudFormation, enabling consistent environment provisioning</li>
+                            
+                            <li>Enhanced system observability through implementation of Datadog monitoring and APM solutions</li>
+                            
+                            <li>Established and maintained service level objectives (SLOs) and conducted weekly live site reviews to drive reliability improvements</li>
+                            
+                            <li>Streamlined environment deployment process through automation and standardization, reducing full environment deployment time from three months to one week</li>
+                            
+                            <li>Implemented a continuous release process based on semantic versioning, improving release predictability and reducing deployment risks</li>
+                            
+                            <li>Mentored junior engineers in DevOps practices and infrastructure management, helping them grow into more senior roles</li>
+                            
+                            <li>Incorporated comprehensive testing practices into service template, including PITest mutation testing for Java code quality assurance</li>
+                            
+                        </ul>
+                    </div>
+                    
+                </div>
+                
+                <div class="job">
+                    <div class="job-header">
+                        <div class="company">Nasdaq</div>
+                        <div class="tenure">2012-06-04 - 2020-02</div>
+                    </div>
+                    
+                    <div class="role">
+                        <div class="role-title">RiskXposure</div>
+                        <div class="role-description">Senior Software Engineer - Real-Time Market Risk Platform</div>
+                        <div class="role-period">2016 - present</div>
+                        <ul class="bullets">
+                            
+                            <li>Architected and implemented a 10x throughput improvement in the risk engine through strategic data partitioning and parallel computation optimization</li>
+                            
+                            <li>Led the migration from proprietary messaging to Kafka, resulting in improved system reliability and reduced maintenance overhead</li>
+                            
+                            <li>Designed and implemented a dynamic resource provisioning system using Kubernetes, with a React/JavaScript frontend for operational control</li>
+                            
+                            <li>Spearheaded the decomposition of a monolithic SOA system into microservices, reducing deployment complexity and improving system resilience</li>
+                            
+                            <li>Enhanced system observability by implementing comprehensive REST-based telemetry and monitoring solutions</li>
+                            
+                            <li>Developed and maintained support for multiple wire protocols including FIX, JSON, Avro, and proprietary binary formats</li>
+                            
+                            <li>Mentored junior engineers in high-performance systems development and microservices architecture, helping them advance in their careers</li>
+                            
+                        </ul>
+                    </div>
+                    
+                    <div class="role">
+                        <div class="role-title">Business Intelligence</div>
+                        <div class="role-description">Engineering Manager - AWS-Based BI Platform</div>
+                        <div class="role-period">2015 - 2016</div>
+                        <ul class="bullets">
+                            
+                            <li>Led a team of seven engineers while serving as Scrum Master and primary technical liaison with business stakeholders</li>
+                            
+                            <li>Architected and implemented a cloud-native ETL pipeline using AWS services (Redshift, Aurora, S3, EC2) and Pentaho</li>
+                            
+                            <li>Established a transparent development process that balanced stakeholder needs while ensuring on-time project delivery</li>
+                            
+                        </ul>
+                    </div>
+                    
+                    <div class="role">
+                        <div class="role-title">OATS (Order Audit Trail System)</div>
+                        <div class="role-description">Software Engineer - Compliance Reporting System</div>
+                        <div class="role-period">2012 - 2016</div>
+                        <ul class="bullets">
+                            
+                            <li>Achieved 7x performance improvement in legacy ETL system through optimized data structures while maintaining strict data quality SLAs</li>
+                            
+                            <li>Led a clean-room reimplementation of the OATS system, significantly improving system reliability and throughput</li>
+                            
+                            <li>Modernized deployment pipeline from rsync-based tooling to RPM-based package management</li>
+                            
+                            <li>Developed a database-backed web application for configuration management, reducing configuration-related incidents</li>
+                            
+                        </ul>
+                    </div>
+                    
+                </div>
+                
+            </div>
+        </div>
+    </div>
 
-<hr/>
-
-<h4 id="relevantskills">Relevant Skills</h4>
-
-<ul>
-    <li>Programming Languages: Java, Python, JavaScript, SQL (MySQL, PostgreSQL, Snowflake), Bash, Go, Rust</li>
-    
-    <li>Frameworks &amp; Libraries: Spring Framework (2-5), Spring Boot, jQuery, JSP, Presto, dbt</li>
-    
-    <li>Infrastructure &amp; Cloud: Kubernetes (EKS, AKS), AWS (Redshift, Aurora, S3, EC2), Azure (App Service, Application Insights, Cosmos DB, Key Vault), Docker, Apache, Kafka</li>
-    
-    <li>Development Tools: Git, Maven, GitHub Actions, Azure DevOps, Terraform, Helm, Prometheus, Grafana, Datadog</li>
-    
-    <li>Methodologies: Agile (Scrum, Kanban), CI/CD, Microservices Architecture, Event-Driven Design, SRE Practices</li>
-    
-    <li>Performance Optimization: JVM Tuning, Data Structure Optimization, Parallel Programming, Message-Based Architectures</li>
-    
-</ul>
-<h2 id="eachjobs"></h2>
-<h4 id="company">UiPath</h4>
-<blockquote>
-    <p>2020-02 - present</p>
-    <p></p>
-    <h4 id="name-1">Site Reliability Engineering</h4>
-    <blockquote>
-        <p>2022-02 - present</p>
-    </blockquote>
-    <p>Senior Site Reliability Engineer - UiPath</p>
-    <blockquote>
-        <ul>
-            <li>Lead global live site review meetings, including SLO review and postmortem analysis, driving reliability improvements across the platform</li>
+    <div class="section">
+        <h2 class="section-title">Education</h2>
+        <div class="education">
             
-            <li>Led a comprehensive monitoring and observability initiative, implementing centralized logging, metrics, and alerting across integrated platforms</li>
+            <div class="education-item">B.S. Computer Science, Metropolitan State University of Denver, 2012</div>
             
-            <li>Established standardized SRE practices across both platforms, including incident response procedures and reliability metrics</li>
-            
-            <li>Optimized availability monitoring by migrating from expensive Application Insights to dbt-based preaggregation in Snowflake, significantly reducing costs</li>
-            
-            <li>Built a new latency monitoring system from the ground up using dbt and Snowflake, providing real-time insights into service performance</li>
-            
-            <li>Mentor team members in SRE practices and cloud technologies, fostering a culture of continuous learning and improvement</li>
-            
-        </ul>
-    </blockquote>
-    </p>
-    <h4 id="name-1">(Cloud Elements) Site Reliability Engineering</h4>
-    <blockquote>
-        <p>2020-02-03 - present</p>
-    </blockquote>
-    <p>Senior SRE/DevOps Engineer - Cloud Infrastructure Platform</p>
-    <blockquote>
-        <ul>
-            <li>Led the zero-downtime migration of Kafka and Redis from pet servers to Kubernetes (EKS), improving reliability and reducing operational overhead</li>
-            
-            <li>Migrated CI/CD pipelines from CircleCI to GitHub Actions, streamlining the development workflow and reducing build times</li>
-            
-            <li>Created a comprehensive Spring Boot service template with standardized build and deployment tooling, reducing new service launch time by 70%</li>
-            
-            <li>Implemented infrastructure as code using Terraform and AWS CloudFormation, enabling consistent environment provisioning</li>
-            
-            <li>Enhanced system observability through implementation of Datadog monitoring and APM solutions</li>
-            
-            <li>Established and maintained service level objectives (SLOs) and conducted weekly live site reviews to drive reliability improvements</li>
-            
-            <li>Streamlined environment deployment process through automation and standardization, reducing full environment deployment time from three months to one week</li>
-            
-            <li>Implemented a continuous release process based on semantic versioning, improving release predictability and reducing deployment risks</li>
-            
-            <li>Mentored junior engineers in DevOps practices and infrastructure management, helping them grow into more senior roles</li>
-            
-            <li>Incorporated comprehensive testing practices into service template, including PITest mutation testing for Java code quality assurance</li>
-            
-        </ul>
-    </blockquote>
-    
-</blockquote>
-</h2>
-<h4 id="company">Nasdaq</h4>
-<blockquote>
-    <p>2012-06-04 - 2020-02</p>
-    <p></p>
-    <h4 id="name-1">RiskXposure</h4>
-    <blockquote>
-        <p>2016 - present</p>
-    </blockquote>
-    <p>Senior Software Engineer - Real-Time Market Risk Platform</p>
-    <blockquote>
-        <ul>
-            <li>Architected and implemented a 10x throughput improvement in the risk engine through strategic data partitioning and parallel computation optimization</li>
-            
-            <li>Led the migration from proprietary messaging to Kafka, resulting in improved system reliability and reduced maintenance overhead</li>
-            
-            <li>Designed and implemented a dynamic resource provisioning system using Kubernetes, with a React/JavaScript frontend for operational control</li>
-            
-            <li>Spearheaded the decomposition of a monolithic SOA system into microservices, reducing deployment complexity and improving system resilience</li>
-            
-            <li>Enhanced system observability by implementing comprehensive REST-based telemetry and monitoring solutions</li>
-            
-            <li>Developed and maintained support for multiple wire protocols including FIX, JSON, Avro, and proprietary binary formats</li>
-            
-            <li>Mentored junior engineers in high-performance systems development and microservices architecture, helping them advance in their careers</li>
-            
-        </ul>
-    </blockquote>
-    </p>
-    <h4 id="name-1">Business Intelligence</h4>
-    <blockquote>
-        <p>2015 - 2016</p>
-    </blockquote>
-    <p>Engineering Manager - AWS-Based BI Platform</p>
-    <blockquote>
-        <ul>
-            <li>Led a team of seven engineers while serving as Scrum Master and primary technical liaison with business stakeholders</li>
-            
-            <li>Architected and implemented a cloud-native ETL pipeline using AWS services (Redshift, Aurora, S3, EC2) and Pentaho</li>
-            
-            <li>Established a transparent development process that balanced stakeholder needs while ensuring on-time project delivery</li>
-            
-        </ul>
-    </blockquote>
-    </p>
-    <h4 id="name-1">OATS (Order Audit Trail System)</h4>
-    <blockquote>
-        <p>2012 - 2016</p>
-    </blockquote>
-    <p>Software Engineer - Compliance Reporting System</p>
-    <blockquote>
-        <ul>
-            <li>Achieved 7x performance improvement in legacy ETL system through optimized data structures while maintaining strict data quality SLAs</li>
-            
-            <li>Led a clean-room reimplementation of the OATS system, significantly improving system reliability and throughput</li>
-            
-            <li>Modernized deployment pipeline from rsync-based tooling to RPM-based package management</li>
-            
-            <li>Developed a database-backed web application for configuration management, reducing configuration-related incidents</li>
-            
-        </ul>
-    </blockquote>
-    
-</blockquote>
-
+        </div>
+    </div>
 </body>
+
 </html>
